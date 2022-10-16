@@ -107,8 +107,7 @@ class _HomePageState extends State<HomePage>
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: <Widget>[
-                  RaisedButton(
-                    color: Colors.blue,
+                  ElevatedButton(
                     onPressed: () {
                       Navigator.of(context).pop();
                     },
@@ -133,11 +132,14 @@ class _HomePageState extends State<HomePage>
     super.initState();
 
     firebaseMessaging.configure(onLaunch: (Map<String, dynamic> msg) {
-      print(" onLaunch called ${(msg)}");
+      debugPrint(" onLaunch called ${(msg)}");
+      return ;
     }, onResume: (Map<String, dynamic> msg) {
-      print(" onResume called ${(msg)}");
-    }, onMessage: (Map<String, dynamic> msg) {
+      debugPrint(" onResume called ${(msg)}");
+      return ;
+    }, onMessage: (Map<String, dynamic> msg){
       showDialogNotification(context, msg["notification"]["body"]);
+      return ;
     });
     firebaseMessaging.requestNotificationPermissions(
         const IosNotificationSettings(sound: true, alert: true, badge: true));

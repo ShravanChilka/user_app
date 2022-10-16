@@ -168,11 +168,7 @@ class LeaveApprovalByManagerWidgetState
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
-                  RaisedButton(
-                    color: Colors.green,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: new BorderRadius.circular(10.0),
-                    ),
+                  ElevatedButton(
                     onPressed: () async {
                       onLoadingDialog(context);
                       int days = leave.toDate.difference(leave.fromDate).inDays;
@@ -187,7 +183,6 @@ class LeaveApprovalByManagerWidgetState
                         setState(() {});
                       });
                     },
-                    textColor: Color(0x66FFFFFF),
                     child: Padding(
                       padding: const EdgeInsets.symmetric(vertical: 4),
                       child: Column(children: <Widget>[
@@ -207,11 +202,7 @@ class LeaveApprovalByManagerWidgetState
                   SizedBox(
                     width: 30,
                   ),
-                  RaisedButton(
-                    color: Colors.red,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: new BorderRadius.circular(10.0),
-                    ),
+                  ElevatedButton(
                     onPressed: () async {
                       onLoadingDialog(context);
                       reviewLeaveDatabase
@@ -224,7 +215,6 @@ class LeaveApprovalByManagerWidgetState
                         });
                       });
                     },
-                    textColor: Color(0x66FFFFFF),
                     child: Padding(
                       padding: const EdgeInsets.symmetric(vertical: 4),
                       child: Column(children: <Widget>[

@@ -12,30 +12,30 @@ class Leave {
   String name;
   String userUid;
 
-  Leave(
-      {this.name,
-      this.key,
-      this.appliedDate,
-      this.fromDate,
-      this.toDate,
-      this.type,
-      this.status,
-      this.withdrawalStatus,
-      this.message,
-        this.userUid
-      });
+  Leave({
+    this.name,
+    this.key,
+    this.appliedDate,
+    this.fromDate,
+    this.toDate,
+    this.type,
+    this.status,
+    this.withdrawalStatus,
+    this.message,
+    this.userUid,
+  });
 
   factory Leave.fromJson(String key, Map<String, dynamic> parsedJson) {
     return Leave(
-        key: key,
-        appliedDate: formattedProperDateTime(parsedJson['appliedDate']),
-        fromDate: formattedProperDateTime(parsedJson['fromDate']),
-        toDate: formattedProperDateTime(parsedJson['toDate']),
-        type: getType(parsedJson['type']),
-        status: getStatus(parsedJson['status']),
-        withdrawalStatus: (0 != parsedJson['withdrawalStatus']),
-        message: parsedJson['message'] == "" ? "none" : parsedJson['message'],
-        );
+      key: key,
+      appliedDate: formattedProperDateTime(parsedJson['appliedDate']),
+      fromDate: formattedProperDateTime(parsedJson['fromDate']),
+      toDate: formattedProperDateTime(parsedJson['toDate']),
+      type: getType(parsedJson['type']),
+      status: getStatus(parsedJson['status']),
+      withdrawalStatus: (0 != parsedJson['withdrawalStatus']),
+      message: parsedJson['message'] == "" ? "none" : parsedJson['message'],
+    );
   }
 }
 

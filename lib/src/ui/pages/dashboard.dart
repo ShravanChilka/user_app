@@ -144,15 +144,7 @@ class _NavigationPanelState extends State<NavigationPanel> {
   Widget drawerTile(String title, Function() onTap, [IconData icon]) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-      child: OutlineButton(
-        shape: new RoundedRectangleBorder(
-            borderRadius: new BorderRadius.circular(30.0)),
-        hoverColor: Colors.transparent,
-        borderSide: BorderSide(
-          color: Colors.white, //Color of the border
-          style: BorderStyle.solid, //Style of the border
-          width: 0.8, //width of the border
-        ),
+      child: ElevatedButton(
         child: ListTile(
           contentPadding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
           leading: Icon(

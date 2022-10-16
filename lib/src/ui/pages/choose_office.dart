@@ -70,16 +70,9 @@ class ChooseOfficeWidgetState extends State<ChooseOfficeWidget> {
         onTap: onTabTapped,
         currentIndex: _currentIndex,
         items: [
-          new BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            title: Text('Home'),
-          ),
-          new BottomNavigationBarItem(
-            icon: Icon(Icons.mail),
-            title: Text('Messages'),
-          ),
-          new BottomNavigationBarItem(
-              icon: Icon(Icons.person), title: Text('Profile'))
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+          BottomNavigationBarItem(icon: Icon(Icons.mail), label: 'Messages'),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile')
         ],
       ),
     );

@@ -123,7 +123,7 @@ class LeaveApplicationWidgetState extends State<LeaveApplicationWidget>
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
           textTheme: TextTheme(
-              body1: TextStyle(
+              bodyText1: TextStyle(
                   color: Colors.black87,
                   fontFamily: "poppins-medium",
                   fontSize: 15,
@@ -217,12 +217,7 @@ class LeaveApplicationWidgetState extends State<LeaveApplicationWidget>
                                     Container(
                                         padding: const EdgeInsets.fromLTRB(
                                             0, 5, 0, 20),
-                                        child: RaisedButton(
-                                          color: Colors.white,
-                                          shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(5.0)),
-                                          elevation: 4.0,
+                                        child: ElevatedButton(
                                           onPressed: () {
                                             DatePicker.showDatePicker(context,
                                                 theme: DatePickerTheme(
@@ -293,12 +288,7 @@ class LeaveApplicationWidgetState extends State<LeaveApplicationWidget>
                                     Container(
                                         padding: const EdgeInsets.fromLTRB(
                                             0, 5, 0, 20),
-                                        child: RaisedButton(
-                                          color: Colors.white,
-                                          shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(5.0)),
-                                          elevation: 4.0,
+                                        child: ElevatedButton(
                                           onPressed: () {
                                             DatePicker.showDatePicker(context,
                                                 theme: DatePickerTheme(
@@ -420,10 +410,7 @@ class LeaveApplicationWidgetState extends State<LeaveApplicationWidget>
                                 Container(
                                     padding: const EdgeInsets.symmetric(
                                         vertical: 16.0, horizontal: 16.0),
-                                    child: RaisedButton(
-                                        color: splashScreenColorTop,
-                                        hoverColor: splashScreenColorBottom,
-                                        hoverElevation: 40.0,
+                                    child: ElevatedButton(
                                         onPressed: () {
                                           if (_validateData(context)) {
                                             onLoadingDialog(context);
@@ -461,7 +448,7 @@ class LeaveApplicationWidgetState extends State<LeaveApplicationWidget>
                                                         Colors.blue,
 //                                                duration: Duration(seconds: 1),
                                                   );
-                                                  Scaffold.of(context)
+                                                  ScaffoldMessenger.of(context)
                                                       .showSnackBar(data);
                                                 });
                                               } else {
@@ -475,7 +462,7 @@ class LeaveApplicationWidgetState extends State<LeaveApplicationWidget>
                                                           color: Colors.white)),
                                                   backgroundColor: Colors.red,
                                                 );
-                                                Scaffold.of(context)
+                                                ScaffoldMessenger.of(context)
                                                     .showSnackBar(error);
                                               }
                                             });
@@ -556,7 +543,7 @@ class LeaveApplicationWidgetState extends State<LeaveApplicationWidget>
             style: TextStyle(color: Colors.white)),
         backgroundColor: Colors.red,
       );
-      Scaffold.of(context).showSnackBar(error);
+      ScaffoldMessenger.of(context).showSnackBar(error);
       returnVal = false;
     }
 
@@ -566,7 +553,7 @@ class LeaveApplicationWidgetState extends State<LeaveApplicationWidget>
             style: TextStyle(color: Colors.white)),
         backgroundColor: Colors.red,
       );
-      Scaffold.of(context).showSnackBar(error);
+      ScaffoldMessenger.of(context).showSnackBar(error);
       returnVal = false;
     }
 
@@ -592,7 +579,7 @@ class LeaveApplicationWidgetState extends State<LeaveApplicationWidget>
           ),
           actions: <Widget>[
             // usually buttons at the bottom of the dialog
-            new FlatButton(
+            ElevatedButton(
               child: new Text("Close"),
               onPressed: () {
                 Navigator.of(context).pop();

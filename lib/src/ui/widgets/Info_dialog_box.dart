@@ -26,7 +26,7 @@ void showDialogTemplate(BuildContext context, String title, String subtitle,
             ],
           ),
           actions: <Widget>[
-            FlatButton(
+            ElevatedButton(
               child: Text(
                 buttonText,
                 style: TextStyle(fontSize: 18.0, color: Colors.white),

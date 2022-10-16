@@ -205,15 +205,15 @@ class _AttendanceSummaryState extends State<AttendanceSummary>
             ),
           );
         },
-        markersBuilder: (context, date, events, holidays) {
+        markerBuilder: (context, date, holidays) {
           final children = <Widget>[];
 
-          if (events.isNotEmpty) {
+          if (holidays.isNotEmpty) {
             children.add(
               Positioned(
                 right: 1,
                 bottom: 1,
-                child: _buildEventsMarker(date, events),
+                child: _buildEventsMarker(date, holidays),
               ),
             );
           }
@@ -227,12 +227,12 @@ class _AttendanceSummaryState extends State<AttendanceSummary>
               ),
             );
           }
-          return children;
+          return Text("");
         },
       ),
       onDaySelected: (date, events) {
         _selectedDay = date;
-        _onDaySelected(date, events);
+        _onDaySelected(date, []);
         _animationController.forward(from: 0.0);
       },
     );
@@ -243,9 +243,9 @@ class _AttendanceSummaryState extends State<AttendanceSummary>
       duration: const Duration(milliseconds: 300),
       decoration: BoxDecoration(
         shape: BoxShape.circle,
-        color: _calendarController.isSelected(date)
+        color: CalendarController.isSelected(date)
             ? Colors.brown[500]
-            : _calendarController.isToday(date)
+            : CalendarController.isToday(date)
                 ? Colors.brown[300]
                 : Colors.blue[400],
       ),
@@ -288,7 +288,7 @@ class _AttendanceSummaryState extends State<AttendanceSummary>
               ),
               onPressed: () {
                 setState(() {
-                  _calendarController.setCalendarFormat(CalendarFormat.month);
+                  CalendarController.setCalendarFormat(CalendarFormat.month);
                 });
               },
             ),
@@ -302,7 +302,7 @@ class _AttendanceSummaryState extends State<AttendanceSummary>
               ),
               onPressed: () {
                 setState(() {
-                  _calendarController
+                  CalendarController
                       .setCalendarFormat(CalendarFormat.twoWeeks);
                 });
               },
@@ -317,7 +317,7 @@ class _AttendanceSummaryState extends State<AttendanceSummary>
               ),
               onPressed: () {
                 setState(() {
-                  _calendarController.setCalendarFormat(CalendarFormat.week);
+                  CalendarController.setCalendarFormat(CalendarFormat.week);
                 });
               },
             ),
@@ -365,4 +365,12 @@ class _AttendanceSummaryState extends State<AttendanceSummary>
                 fontFamily: "poppins-medium"),
           );
   }
+}
+
+class CalendarController {
+  static void setCalendarFormat(CalendarFormat week) {}
+
+  static isToday(DateTime date) {}
+
+  static isSelected(DateTime date) {}
 }

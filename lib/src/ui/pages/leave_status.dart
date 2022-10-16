@@ -175,11 +175,7 @@ class LeaveStatusWidgetState extends State<LeaveStatusWidget> {
                     ? Container(
                         height: 35,
                       )
-                    : new RaisedButton(
-                        color: Colors.indigo,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: new BorderRadius.circular(10.0),
-                        ),
+                    : new ElevatedButton(
                         onPressed: () async {
                           onLoadingDialog(context);
                           leaveDatabase
@@ -191,7 +187,6 @@ class LeaveStatusWidgetState extends State<LeaveStatusWidget> {
                           });
                           Future.delayed(Duration(seconds: 1), (){setState(() {});});
                         },
-                        textColor: Color(0x66FFFFFF),
                         child: Padding(
                           padding: const EdgeInsets.symmetric(vertical: 4),
                           child: Column(children: <Widget>[

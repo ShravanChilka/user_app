@@ -426,7 +426,7 @@ class _LoginState extends State<Login> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  FlatButton(
+                  ElevatedButton(
                     onPressed: () => _formKey.currentState.reset(),
                     child: Text(
                       "Reset",

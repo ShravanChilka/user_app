@@ -28,7 +28,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
       decoration: BoxDecoration(
           border: Border(bottom: BorderSide(color: themeData.dividerColor))),
       child: DefaultTextStyle(
-        style: Theme.of(context).textTheme.subhead,
+        style: Theme.of(context).textTheme.headline1,
         child: SafeArea(
           top: false,
           bottom: false,
@@ -72,15 +72,17 @@ class _ContactItem extends StatelessWidget {
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  ...lines
-                      .sublist(0, lines.length - 1)
-                      .map<Widget>((String line) => Text(line)),
-                  Text(lines.last, style: themeData.textTheme.caption),
+                children: [
+                  ListView.builder(
+                    itemBuilder: (context, index) {
+                    return Text(lines[index]);
+                  },
+                  itemCount: lines.length,
+                  )
                 ],
               ),
             ),
-            if (icon != null)
+            icon != null ?
               SizedBox(
                 width: 72.0,
                 child: IconButton(
@@ -88,7 +90,7 @@ class _ContactItem extends StatelessWidget {
                   color: themeData.primaryColor,
                   onPressed: onPressed,
                 ),
-              ),
+              ): SizedBox(),
           ],
         ),
       ),
@@ -153,8 +155,7 @@ class ProfilePageState extends State<ProfilePage> {
                       Padding(
                           padding: const EdgeInsets.symmetric(
                               horizontal: 10, vertical: 10),
-                          child: FlatButton(
-                            textColor: Colors.white,
+                          child: ElevatedButton(
                             child: Row(
                               children: <Widget>[
                                 Icon(Icons.edit),

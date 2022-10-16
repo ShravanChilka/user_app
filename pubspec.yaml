@@ -15,7 +15,7 @@ publish_to: none
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: ">=2.2.2 <3.0.0"
 
 dependencies:
   flutter:
@@ -25,23 +25,23 @@ dependencies:
   splashscreen: any
   flutter_sparkline: any
   flutter_staggered_grid_view: any
-  calendarro: ^1.0.0
+  calendarro: any
   firebase_auth: any
-  flutter_screenutil: ^0.4.2
+  flutter_screenutil: any
   table_calendar: any
   firebase_database: any
-  google_maps_flutter: ^0.5.21+8
-  device_id: ^0.2.0
-  location: ^2.3.5
-  flutter_spinkit: ^3.1.0
+  google_maps_flutter: any
+  device_id: any
+  location: any
+  flutter_spinkit: any
   flutter_datetime_picker:
     git:
       url: https://github.com/Realank/flutter_datetime_picker.git
-  grouped_buttons: ^1.0.3
-  permission_handler: ^4.0.0
-  device_info: ^0.4.1+2
-  firebase_messaging: ^6.0.1
-  flutter_local_notifications: ^4.0.1+2
+  grouped_buttons: any
+  permission_handler: any
+  device_info: any
+  firebase_messaging: any
+  flutter_local_notifications: any
 
   geofencing:
     git:

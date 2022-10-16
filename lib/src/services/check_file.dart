@@ -85,7 +85,7 @@ class _MyAppState extends State<MyApp> {
                   children: <Widget>[
                     Text('Current state: $geofenceState'),
                     Center(
-                      child: RaisedButton(
+                      child: ElevatedButton(
                         child: const Text('Register'),
                         onPressed: () {
                           if (latitude == null) {
@@ -106,7 +106,7 @@ class _MyAppState extends State<MyApp> {
                       ),
                     ),
                     Center(
-                      child: RaisedButton(
+                      child: ElevatedButton(
                           child: const Text('Unregister'),
                           onPressed: () =>
                               GeofencingManager.removeGeofenceById('mtv')),
